@@ -1,0 +1,41 @@
+<section class="category-navigation">
+    <header class="header navbar navbar-inner">
+        <nav class="navbar navbar-categories" role="navigation">
+            <section>
+                <div class="container">
+
+                    <div class="nav navbar-nav pull-left">
+                        <div class="logo">
+                            <a href="catalog">
+                                <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav navbar-nav pull-right">
+                        <div class="logo">
+
+                            <img class="img-responsive" style="max-width: 100%;" src="css/images/SS_logo_for_banner_reduced.jpg">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container">
+                    <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+                        <li ng-repeat="t in tree" class="piped" ng-class="{'active': isInPath('{{t.InteropID}}'),'dropdown': t.SubCategories.length > 0}">
+                            <a ng-if="t.SubCategories.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" style="font-size: 16px;">{{t.Name}}</a>
+                            <a ng-if="t.SubCategories.length == 0" href="catalog/{{t.InteropID}}" style="font-size: 16px;">{{t.Name}}</a>
+                            <ul ng-if="t.SubCategories.length > 0" class="dropdown-menu">
+                                <li><a href="catalog/{{t.InteropID}}">All {{t.Name}}</a></li>
+                                <li ng-repeat="sc in t.SubCategories">
+                                    <a href="catalog/{{sc.InteropID}}">{{sc.Name}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+        </nav>
+    </header>
+</section>
