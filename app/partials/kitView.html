@@ -5,11 +5,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<figure>
-                    <!--1/22/18 Ken Edwards
-                        Added <a> tag to allow popping up a full-size image in a new browser window-->
-                    <a target="_blank" href="{{Kit.KitParent.LargeImageUrl}}">
-                        <img id="451_img_prod_lg" class="product-image-large img-responsive" ng-src="{{Kit.KitParent.LargeImageUrl}}" imageonload />
-                    </a>
+                    <img id="451_img_prod_lg" class="product-image-large img-responsive" ng-src="{{Kit.KitParent.LargeImageUrl}}" imageonload />
 				</figure>
 				<div class="empty" ng-hide="Kit.KitParent.LargeImageUrl">
 					<span class="fa empty"><i class="fa fa-camera"></i></span>
