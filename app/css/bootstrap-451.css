@@ -6066,9 +6066,16 @@ small,
 label {
   display: block;
 }
+/* 1/24/18 Ken Edwards
+    Change color red to font-weight: bold, add "before"
+*/
 label.required {
-  color: red;
+  font-weight:bold;
+  color: black;
 }
+label.required::before { 
+  content: "*";
+} 
 select {
   cursor: pointer;
 }

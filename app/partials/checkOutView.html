@@ -24,7 +24,7 @@
                         <span class="badge">
                             <i class="fa fa-exclamation-circle fa-inverse"></i>
                             {{cart_order.$error.required.length + cart_billing.$error.required.length + cart_shipping.$error.required.length + cart_billing.$error.paymentMethod.length}}
-                            {{' [' + cart_order.$error.required.length + '][' + cart_billing.$error.required.length + '][' + cart_shipping.$error.required.length + '][' + cart_billing.$error.paymentMethod.length + ']'}}
+                            {{'lengths are [' + cart_shipping.$error.required.length + ']'}}
                         </span>
                     </li>
                     <li class="text-center">
