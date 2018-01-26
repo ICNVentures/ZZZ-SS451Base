@@ -1,0 +1,73 @@
+<section class="contact-us">
+    <accountnavigation ng-show="user.Permissions.contains('ViewSelfAdmin') || user.Type == 'Customer'" />
+    <div class="panel panel-no-panels">
+        <div class="panel-heading">
+            <h1 class="panel-title panel-primary">{{('Support' | r) + ' ' + ('' | r) | xlat }}</h1>
+        </div>
+        <div class="panel-body" style="font-weight:normal">
+            <p>
+            <h3 style="text-align:center;">
+                    <b>If you have questions about products or orders, please contact
+
+                    <!-- ********************************************************************************* -->
+                    <!-- Place the name or company to contact (e.g. your Smart Source Sales Rep)           -->
+                    <!-- ********************************************************************************* -->
+                         GADA
+                    <!-- ********************************************************************************* -->
+
+                    ...<br />
+
+                    <!-- ********************************************************************************* -->
+                    <!-- Please the contact information (e.g. email, phone)                                -->
+                    <!-- ********************************************************************************* -->
+                         Email: <a href="mailto:forms.gada.com">forms@gada.com</a>, Phone: 770.432.1658 ext 201
+                    <!-- ********************************************************************************* -->
+
+                    </b>
+                </h3>
+            </p>
+
+            <h2>Order Tracking</h2>
+            <p>
+                You will receive a confirmation email to the 'Ordered By Email' address you enter on checkout once your order is placed and a second email containing tracking information when your order ships. Additionally, you can check the status of your 
+                order at any time by logging into your account and clicking the "Orders".
+            </p>
+
+            <h2>Return Policy</h2>
+            <p>
+                Please contact you Smart Source sales rep for information on returning items.
+            </p>
+
+            <h2>Privacy & Security</h2>
+            <p>
+                What Information Do We Collect?
+            </p>
+            <p>
+                We only collect information that we need that is related to your order. This includes your:
+            </p>
+            <p>
+                &bull;&nbsp;&nbsp;Shipping Address<br />
+                &bull;&nbsp;&nbsp;Email Address<br />
+                &bull;&nbsp;&nbsp;Credit Card Information<br />
+            </p>
+            <p>
+                We also collect information on your IP address, browser type, and Refer URL data. We use this data to prevent hacking attempts and to help us know what web browsers people are using.
+            </p>
+
+            <h2>How Is My Information Used?</h2>
+            <p>
+                Your information is only used to fill your order. We do not sell or redistribute your information to anyone.
+            </p>
+            <h2>Security and Storage</h2>
+            <p>
+                Only your order billing, shipping, and order contents data is stored on our server. This information is encrypted using a Secure Sockets Layer (SSL) before it is transmitted over a web server. We do not store your credit card data.
+            </p>
+            <h2>Cookies and Browser Information</h2>
+            <p>
+                Cookies are small files that reside on your computer and allow us to recognize you on your next visit or store your shopping cart contents. We use them only to track this information.
+            </p>
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+</section>

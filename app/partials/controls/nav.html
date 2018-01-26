@@ -3,12 +3,23 @@
         <nav class="navbar navbar-categories" role="navigation">
             <section>
                 <div class="container">
-
                     <div class="nav navbar-nav pull-left">
                         <div class="logo">
-                            <a href="catalog">
-                                <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
-                            </a>
+                            <div ng-if="slides.length != 0">
+                                <a href="catalog">
+                                    <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
+                                </a>
+                            </div>
+                            <div ng-if="slides.length == 0 && tree.length != 0">
+                                <a href="{{'catalog/' + tree[tree.length-1].InteropID}}">
+                                    <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
+                                </a>
+                            </div>
+                            <div ng-if="slides.length == 0 && tree.length == 0">
+                                <a href="catalog/">
+                                    <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="nav navbar-nav pull-right">

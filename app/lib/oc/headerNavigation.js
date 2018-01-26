@@ -20,6 +20,8 @@ function headernavigation() {
             '<li><span style="color: #000;">&nbsp;&bull;&nbsp;</span></li>',
             '<li><a href="order">Orders</a></li>',
             '<li><span style="color: #000;">&nbsp;&bull;&nbsp;</span></li>',
+            '<li ng-if="user.Permissions.contains(\'ViewContactUs\')"><a href="contactus">Support</a></li>',
+            '<li ng-if="user.Permissions.contains(\'ViewContactUs\')"><span style="color: #000;">&nbsp;&bull;&nbsp;</span></li>',
             '<li><a href="cart">Cart&nbsp;',
             '<span ng-if="currentOrder.LineItems.length" ng-bind="cartCount" class="badge"></span>',
             '</a></li>',

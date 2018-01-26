@@ -1,12 +1,10 @@
 angular.module('OrderCloud-Carousel', ['ngAnimate']);
 
-// 1/21/18 Ken Edwards
-// Comment out 2 filter lines in base (as done in Fields custom)
 angular.module('OrderCloud-Carousel')
     .directive('customcarousel', customcarousel)
     .controller('customCarouselCtrl', customCarouselCtrl)
-    //.filter('intervalFilter', intervalFilter)
-    //.filter('carouselFilter', carouselFilter)
+    .filter('intervalFilter', intervalFilter)
+    .filter('carouselFilter', carouselFilter)
 ;
 
 function customcarousel() {
@@ -23,6 +21,7 @@ function customcarousel() {
             '.carousel-inner a[ng-href=""]:hover{cursor: default}',
             '.carousel-control.left {background-image: none;}',
             '.carousel-control.right {background-image: none;}',
+            '.carousel-inner > .item { display: block }',
             '</style>',
             '<carousel interval="myInterval">',
             '<slide ng-repeat="slide in slides" active="slide.active">',
@@ -50,7 +49,7 @@ function customCarouselCtrl($scope, $animate, $filter) {
         $scope.slides = []; //reset the slide counter
         $scope.myInterval = ($filter('intervalFilter')($scope.user.CustomFields, 'interval') * 1000) || 5000;
         $scope.slides = $scope.slides.concat($filter('carouselFilter')($scope.user.CustomFields, 'landingBanner'));
-        //$scope.slides[0].active = true;
+        $scope.slides[0].active = true;
     });
 }
 

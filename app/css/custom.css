@@ -83,7 +83,10 @@ Authors: Coverdale Group
     margin-bottom: -1px;
 }
 
-.category-navigation {margin:45px auto;}
+/* 1/25/2018 Ken Edwards
+    Changed from 45px to 15px
+*/
+.category-navigation {margin:15px auto;}
 
 .category-navigation .navbar .container .navbar-nav.pull-right li a,
 .category-navigation .navbar .container-view .navbar-nav.pull-right li a {

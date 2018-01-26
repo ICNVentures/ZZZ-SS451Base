@@ -24,7 +24,6 @@
                         <span class="badge">
                             <i class="fa fa-exclamation-circle fa-inverse"></i>
                             {{cart_order.$error.required.length + cart_billing.$error.required.length + cart_shipping.$error.required.length + cart_billing.$error.paymentMethod.length}}
-                            {{'lengths are [' + cart_shipping.$error.required.length + ']'}}
                         </span>
                     </li>
                     <li class="text-center">
@@ -36,6 +35,13 @@
                             <li ng-if="cart_shipping.shippingAddress.$invalid">{{'Please choose a ' + ('Shipping' | rl) + ' ' + ('Address' | rl) | xlat}}</li>
                             <li ng-if="cart_shipping.shippingAddressLineItem.$invalid">{{'Please choose a ' + ('Shipping' | rl) + ' ' + ('Address' | rl) | xlat}}</li>
                             <li ng-if="cart_shipping.shipMethod.$invalid">{{'Please choose a ' + ('Shipping' | rl) + ' ' + ('Method' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shipperName.$invalid">{{'Please choose a ' + ('Shipper' | rl) + ' ' + ('Name' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shipfirst.$invalid">{{ 'Please enter a ' + ('Ship-To' | rl) + ' ' + ('First Name' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shiplast.$invalid">{{'Please enter a ' + ('Ship-To' | rl) + ' ' + ('Last Name' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shipaccount.$invalid">{{'Please enter a ' + ('Ship-To' | rl) + ' ' + ('Account' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shipattnfirst.$invalid">{{'Please enter a ' + ('Attention' | rl) + ' ' + ('First Name' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shipattnlast.$invalid">{{'Please enter a ' + ('Attention' | rl) + ' ' + ('Last Name' | rl) | xlat}}</li>
+                            <li ng-if="cart_shipping.shipacctnum.$invalid">{{'Please enter a ' + ('Account' | rl) + ' ' + ('Number' | rl) | xlat}}</li>
                             <li ng-if="cart_billing.billingAddress.$invalid">{{'Please choose a ' + ('Billing' | rl) + ' ' + ('Address' | rl) | xlat}}</li>
                             <li ng-if="cart_billing.billingFirstName.$invalid">{{'Please enter a ' + ('Billing' | rl) + ' ' + ('First Name' | rl) | xlat}}</li>
                             <li ng-if="cart_billing.billingLastName.$invalid">{{'Please enter a ' + ('Billing' | rl) + ' ' + ('Last Name' | rl) | xlat}}</li>
@@ -56,6 +62,7 @@
                 </ul>
             </div>
             <orderbuttons view="checkout" continue="true"></orderbuttons>
+
         </div>
     </div>
 </section>
