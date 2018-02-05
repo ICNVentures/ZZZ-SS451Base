@@ -5,21 +5,9 @@
                 <div class="container">
                     <div class="nav navbar-nav pull-left">
                         <div class="logo">
-                            <div ng-if="slides.length != 0">
-                                <a href="catalog">
-                                    <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
-                                </a>
-                            </div>
-                            <div ng-if="slides.length == 0 && tree.length != 0">
-                                <a href="{{'catalog/' + tree[tree.length-1].InteropID}}">
-                                    <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
-                                </a>
-                            </div>
-                            <div ng-if="slides.length == 0 && tree.length == 0">
-                                <a href="catalog/">
-                                    <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
-                                </a>
-                            </div>
+                            <a href="catalog">
+                                <img class="img-responsive" ng-src="{{user.Company.LogoUrl}}" style="max-width: 100%;" />
+                            </a>
                         </div>
                     </div>
                     <div class="nav navbar-nav pull-right">
@@ -37,7 +25,7 @@
                             <a ng-if="t.SubCategories.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" style="font-size: 16px;">{{t.Name}}</a>
                             <a ng-if="t.SubCategories.length == 0" href="catalog/{{t.InteropID}}" style="font-size: 16px;">{{t.Name}}</a>
                             <ul ng-if="t.SubCategories.length > 0" class="dropdown-menu">
-                                <li><a href="catalog/{{t.InteropID}}">All {{t.Name}}</a></li>
+                                <li><a href="catalog/">All {{t.Name}}</a></li>
                                 <li ng-repeat="sc in t.SubCategories">
                                     <a href="catalog/{{sc.InteropID}}">{{sc.Name}}</a>
                                 </li>

@@ -1,5 +1,6 @@
-four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451', 'Category', 'Product', 'Nav',
-function ($routeParams, $sce, $scope, $451, Category, Product, Nav) {
+four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451', 'Category', 'Product', 'Nav', 'User',
+function ($routeParams, $sce, $scope, $451, Category, Product, Nav, User) {
+
 	$scope.productLoadingIndicator = true;
 	$scope.settings = {
 		currentPage: 1,
@@ -32,9 +33,30 @@ function ($routeParams, $sce, $scope, $451, Category, Product, Nav) {
         });
     }
 	else if($scope.tree){
-		$scope.currentCategory ={SubCategories:$scope.tree};
+	    if ($scope.user.CustomFields.length == 0)
+	    {
+    	    var hf = window.location.href.split('/');
+    	    var id = hf[3] + '9999';
+    	    $routeParams.categoryInteropID = id;
+    	    $scope.categoryLoadingIndicator = true;
+            Category.get(id, function(cat) {
+                $scope.currentCategory = cat;
+    	        $scope.categoryLoadingIndicator = false;
+            });
+	    }
+		//$scope.currentCategory = {SubCategories:$scope.tree};
 	}
-
+    else
+    {
+    	User.get(function (user) {
+            if (user.CustomFields.length === 0)
+            {
+        	    var hf = window.location.href.split('/');
+        	    window.location.href += "/" + hf[3] + '9999';
+            }
+    });
+    
+    }
 
 	$scope.$on("treeComplete", function(data){
 		if (!$routeParams.categoryInteropID) {

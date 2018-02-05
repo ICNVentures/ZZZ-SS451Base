@@ -52,6 +52,7 @@ function ($scope, $route, $location, $451, User, Order, Security, OrderConfig, C
 			});
 			Category.tree(function (data) {
 				$scope.tree = data;
+                alert('category.tree');
 				$scope.$broadcast("treeComplete", data);
 			});
 		}
